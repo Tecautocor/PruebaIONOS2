@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Vehicle {
+  id_record        Int   @id @unique(map: "id") @default(autoincrement())
+  id               String?
+  media            String?
+  brand            String?
+  model            String?
+  prices           Int?
+  year             Int?
+  owner            Int?
+  home             Int?
+  odometer         Int?
+  type             String?
+  location         String?
+  business_channel String?
+  processedAt      DateTime? @default(now())
+}
